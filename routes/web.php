@@ -20,7 +20,27 @@ Route::get('/test', function () {
 });
 
 Route::get('/posts', function () {
-    return view('/posts.index');
+	$posts = [
+		[
+			'title' => 'My First Title',
+			'body' => 'First Body Description'
+		],
+		[
+			'title' => 'My Second Title',
+			'body' => 'Second Body Description'
+		]
+	];
+
+	$date = '18 April 2017';
+    // return view('/posts.index',[
+    // 	'posts' => $posts,
+    // 	'date' => '18 April 2017'
+    // 	]);
+
+    // return view('/posts.index', compact('date' , 'posts'));
+    return view('/posts.index')
+    	->with('posts' , $posts)
+    	->with('date' , $date);
 });
 
 Route::get('/about-me', function () {
