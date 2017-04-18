@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+@extends('layouts.master')
+
+@section('content')
 		<h1>test</h1>
-		<?php // echo $date; ?>
+		Post ID: {{ id }}
+
 		{{ $date }}
-		<?php //foreach ($posts as $post ):?>
 		@foreach ($posts as $post )
 			<div>
 				<div class='title'>
 					{{ $loop->index + 1}}
-					<?php //echo $post['title']; ?>
 					{{ $post['title'] }}
 				</div>
 				<div class='body'>
-					<?php //echo $post['body']; ?>
 					{{ $post['body'] }}
 				</div>
 			</div>
-		<?php //endforeach; ?>
 		@endforeach
-	</body>
-</html>
+@endsection

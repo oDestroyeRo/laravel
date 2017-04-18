@@ -30,4 +30,8 @@ class PostsController extends Controller
 	    	->with('posts' , $posts)
 	    	->with('date' , $date);
     }
+
+    public funcetion show($id, $name=null){
+		return view('posts.show' , compact('id'));
+	}
 }

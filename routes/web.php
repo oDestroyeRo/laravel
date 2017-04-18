@@ -24,3 +24,14 @@ Route::get('/posts', 'PostsController@index');
 Route::get('/about-me', function () {
     return view('about');
 });
+
+Rount::get('posts/{id}/{name}', 
+	'PostController@show');
+
+Route::get('master', function () {
+    return view('layout.master');
+});
+
+
+
+
