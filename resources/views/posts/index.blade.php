@@ -11,6 +11,7 @@
 		@foreach ($posts as $post )
 			<div>
 				<div class='title'>
+					{{ $loop->index + 1}}
 					<?php //echo $post['title']; ?>
 					{{ $post['title'] }}
 				</div>
